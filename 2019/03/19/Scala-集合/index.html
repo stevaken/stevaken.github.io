@@ -96,20 +96,25 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Stevaken&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="在日常项目开发中，我们几乎都会用到Scala中的集合以及一些集合操作。由于 Scala 中的集合操作灵活多变，对于刚接触Scala的开发者，在选用何种集合以及使用何种集合操作就显得不那么合理了，虽然大部分时候都可以解决问题，但是有时候并没有选择最优的方式。科学合理地操作Scala中的集合可以使我们的代码变得更加简洁和高效。 简介  在Scala2.8 之后，新的Scala集合变的更加易于使用、">
+<meta name="keywords" content="Scala">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scala 集合">
+<meta property="og:url" content="http://yoursite.com/2019/03/19/Scala-集合/index.html">
 <meta property="og:site_name" content="Stevaken&#39;s Blog">
+<meta property="og:description" content="在日常项目开发中，我们几乎都会用到Scala中的集合以及一些集合操作。由于 Scala 中的集合操作灵活多变，对于刚接触Scala的开发者，在选用何种集合以及使用何种集合操作就显得不那么合理了，虽然大部分时候都可以解决问题，但是有时候并没有选择最优的方式。科学合理地操作Scala中的集合可以使我们的代码变得更加简洁和高效。 简介  在Scala2.8 之后，新的Scala集合变的更加易于使用、">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-19T14:10:37.533Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Stevaken&#39;s Blog">
+<meta name="twitter:title" content="Scala 集合">
+<meta name="twitter:description" content="在日常项目开发中，我们几乎都会用到Scala中的集合以及一些集合操作。由于 Scala 中的集合操作灵活多变，对于刚接触Scala的开发者，在选用何种集合以及使用何种集合操作就显得不那么合理了，虽然大部分时候都可以解决问题，但是有时候并没有选择最优的方式。科学合理地操作Scala中的集合可以使我们的代码变得更加简洁和高效。 简介  在Scala2.8 之后，新的Scala集合变的更加易于使用、">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/19/Scala-集合/">
 
 
 
@@ -119,7 +124,7 @@
   };
 </script>
 
-  <title>Stevaken's Blog</title>
+  <title>Scala 集合 | Stevaken's Blog</title>
   
 
 
@@ -167,8 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -206,7 +210,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -302,9 +306,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -336,10 +340,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/19/Scala-集合/" class="post-title-link" itemprop="url">Scala 集合</a>
+          <h1 class="post-title" itemprop="name headline">Scala 集合
+
               
             
           </h1>
@@ -403,13 +405,9 @@
       
 
       
-        
-          
-            <p>  在日常项目开发中，我们几乎都会用到Scala中的集合以及一些集合操作。由于 Scala 中的集合操作灵活多变，对于刚接触Scala的开发者，在选用何种集合以及使用何种集合操作就显得不那么合理了，虽然大部分时候都可以解决问题，但是有时候并没有选择最优的方式。科学合理地操作Scala中的集合可以使我们的代码变得更加简洁和高效。</p>
+        <p>  在日常项目开发中，我们几乎都会用到Scala中的集合以及一些集合操作。由于 Scala 中的集合操作灵活多变，对于刚接触Scala的开发者，在选用何种集合以及使用何种集合操作就显得不那么合理了，虽然大部分时候都可以解决问题，但是有时候并没有选择最优的方式。科学合理地操作Scala中的集合可以使我们的代码变得更加简洁和高效。</p>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>  在Scala2.8 之后，新的Scala集合变的更加易于使用、简洁、安全、快速、通用，得益于以下几个属性。<br>    1.易用性：由20-50个方法的小词汇量，足以在几个操作内解决大部分的集合问题。没有必要被复杂的循环或递归所困扰。持久化的集合类和无副作用的操作意味着你不必担心新数据会意外的破坏已经存在的集合。迭代器和集合更新之间的干扰会被消除！<br>    2.简洁：你可以通过单独的一个词来执行一个或多个循环。你也可以用轻量级的语法和组合轻松地快速表达功能性的操作，以致结果看起来像一个自定义的代数。<br>    3.安全：这一问题必须被熟练的理解，Scala集合的静态类型和函数性质意味着你在编译的时候就可以捕获绝大多数错误。原因是(1)、集合操作本身被大量的使用，是测试良好的。(2)、集合的用法要求输入和输出要显式作为函数参数和结果。（3）这些显式的输入输出会受到静态类型检查。最终，绝大部分的误用将会显示为类型错误。这是很少见的的有数百行的程序的首次运行。<br>    4.快速：集合操作已经在类库里是调整和优化过。因此，使用集合通常是比较高效的。你也许能够通过手动调整数据结构和操作来做的好一点，但是你也可能会由于一些次优的实现而做的更糟。不仅如此，集合类最近已经能支持在多核处理器上并行运算。并行集合类支持有序集合的相同操作，因此没有新的操作需要学习也没有代码需要重写。你可以简单地通过调用标准方法来把有序集合优化为一个并行集合。<br>    5.通用：集合类提供了相同的操作在一些类型上，确实如此。所以，你可以用相当少的词汇完成大量的工作。例如，一个字符串从概念上讲就是一个字符序列。因此，在Scala集合类中，字符串支持所有的序列操作。同样的，数组也是支持的。<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> (minors, adults) = people partition (_.age &lt; <span class="number">18</span>)</span><br></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
 
@@ -430,161 +428,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Stevaken">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/timg.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Stevaken's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/18/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-18 21:28:15" itemprop="dateCreated datePublished" datetime="2019-03-18T21:28:15+08:00">2019-03-18</time>
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/Scala/" rel="tag"># Scala</a>
           
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/18/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -594,14 +467,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -621,8 +495,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -695,6 +578,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -825,6 +725,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
 
   
 
@@ -840,6 +744,8 @@
 
   
 
+
+  
 
 
   
