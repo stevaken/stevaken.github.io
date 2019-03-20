@@ -96,24 +96,25 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="实际上同步与异步是针对应用程序与内核的交互而言的。同步过程中进程触发IO操作并等待（也就是我们说的阻塞）或者轮询的去查看IO操作（也就是我们说的非阻塞）是否完成。异步过程中进程触发IO操作以后，直接返回，做自己的事情，IO交给内核来处理，完成后内核通知进程IO完成。  同步和异步针对应用程序来，关注的是程序中间的协作关系；阻塞与非阻塞更加关注的是单个进程的执行状态。  同步有阻塞和非阻塞之分，">
+<meta name="keywords" content="IO">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/03/18/hello-world/index.html">
+<meta property="og:title" content="同步与异步 阻塞与非阻塞">
+<meta property="og:url" content="http://yoursite.com/2019/03/20/同步与异步-阻塞与非阻塞/index.html">
 <meta property="og:site_name" content="Stevaken&#39;s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="实际上同步与异步是针对应用程序与内核的交互而言的。同步过程中进程触发IO操作并等待（也就是我们说的阻塞）或者轮询的去查看IO操作（也就是我们说的非阻塞）是否完成。异步过程中进程触发IO操作以后，直接返回，做自己的事情，IO交给内核来处理，完成后内核通知进程IO完成。  同步和异步针对应用程序来，关注的是程序中间的协作关系；阻塞与非阻塞更加关注的是单个进程的执行状态。  同步有阻塞和非阻塞之分，">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-18T13:28:15.375Z">
+<meta property="og:updated_time" content="2019-03-20T14:52:43.710Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="同步与异步 阻塞与非阻塞">
+<meta name="twitter:description" content="实际上同步与异步是针对应用程序与内核的交互而言的。同步过程中进程触发IO操作并等待（也就是我们说的阻塞）或者轮询的去查看IO操作（也就是我们说的非阻塞）是否完成。异步过程中进程触发IO操作以后，直接返回，做自己的事情，IO交给内核来处理，完成后内核通知进程IO完成。  同步和异步针对应用程序来，关注的是程序中间的协作关系；阻塞与非阻塞更加关注的是单个进程的执行状态。  同步有阻塞和非阻塞之分，">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/18/hello-world/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/20/同步与异步-阻塞与非阻塞/">
 
 
 
@@ -123,7 +124,7 @@
   };
 </script>
 
-  <title>Hello World | Stevaken's Blog</title>
+  <title>同步与异步 阻塞与非阻塞 | Stevaken's Blog</title>
   
 
 
@@ -322,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/20/同步与异步-阻塞与非阻塞/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Stevaken">
@@ -339,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">同步与异步 阻塞与非阻塞
 
               
             
@@ -365,9 +366,13 @@
                 
               
 
-              <time title="创建时间：2019-03-18 21:28:15" itemprop="dateCreated datePublished" datetime="2019-03-18T21:28:15+08:00">2019-03-18</time>
+              <time title="创建时间：2019-03-20 22:48:06 / 修改时间：22:52:43" itemprop="dateCreated datePublished" datetime="2019-03-20T22:48:06+08:00">2019-03-20</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -400,15 +405,7 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>  实际上同步与异步是针对应用程序与内核的交互而言的。同步过程中进程触发IO操作并等待（也就是我们说的阻塞）或者轮询的去查看IO操作（也就是我们说的非阻塞）是否完成。异步过程中进程触发IO操作以后，直接返回，做自己的事情，IO交给内核来处理，完成后内核通知进程IO完成。<br>  同步和异步针对应用程序来，关注的是程序中间的协作关系；阻塞与非阻塞更加关注的是单个进程的执行状态。<br>  同步有阻塞和非阻塞之分，异步没有，它一定是非阻塞的。<br>  阻塞、非阻塞、多路IO复用，都是同步IO，异步必定是非阻塞的，所以不存在异步阻塞和异步非阻塞的说法。真正的异步IO需要CPU的深度参与。换句话说，只有用户线程在操作IO的时候根本不去考虑IO的执行全部都交给CPU去完成，而自己只等待一个完成信号的时候，才是真正的异步IO。所以，拉一个子线程去轮询、去死循环，或者使用select、poll、epool，都不是异步。<br>  同步：执行一个操作之后，进程触发IO操作并等待（也就是我们所说的阻塞）或者轮询的去查看IO操作（也就是我们所说的非阻塞）是否完成，等待结果，然后继续执行后续操作。<br>  异步：执行一个操作后，可以去执行其它操作，然后等待通知再回来执行刚才没执行完的操作。<br>  阻塞：进程给CPU传达一个任务之后，一个等待CPU处理完成，然后才执行后面的操作。<br>  非阻塞：进程给CPU传达任务后，继续处理后续的操作，隔段时间再来询问之前的操作是否完成。这样的过程其实也叫轮询。</p>
 
       
     </div>
@@ -430,6 +427,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/IO/" rel="tag"># IO</a>
+          
+        </div>
+      
 
       
       
@@ -439,15 +442,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/03/19/Scala-集合/" rel="next" title="Scala 集合">
+                <i class="fa fa-chevron-left"></i> Scala 集合
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/19/Scala-集合/" rel="prev" title="Scala 集合">
-                Scala 集合 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -491,17 +494,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -568,23 +562,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
